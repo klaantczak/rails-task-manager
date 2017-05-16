@@ -1,0 +1,9 @@
+<h1> List of things to do today</h1>
+
+<% @tasks.each do |task| %>
+  <%= link_to "Create a new task", new_task_path%>
+  <h2><%= link_to task.name, task_path(task) %></h2>
+  <p><%= task.description %></p>
+  <%= link_to "Remove Task", task_path(task), method: :delete %>
+  <% end %>
+
